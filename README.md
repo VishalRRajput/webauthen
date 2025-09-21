@@ -1,14 +1,56 @@
-# Node.js template
+# Node.js Authentication System
 
-This is a Node.js project with an HTTP server.
+A simple authentication system built with **Node.js** and **Express**, featuring password hashing and JSON Web Token (JWT) based authentication.
 
-Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) to optimize it for [CodeSandbox](https://codesandbox.io).
+## Features
+- User registration with secure password hashing using **bcrypt**
+- User login with JWT token generation
+- Basic API endpoints for authentication
+- Lightweight and easy to extend
 
-## How does this work?
+## Technologies Used
+- Node.js
+- Express.js
+- Bcrypt
+- JSON Web Token (JWT)
 
-We run `yarn start` to start an HTTP server that runs on http://localhost:8080. You can open new or existing devtools with the + button next to the devtool tabs.
+## Installation
 
-## Resources
+1. Clone the repository:
+ git clone https://github.com/VishalRRajput/webauthen.git
 
-- [CodeSandbox — Docs](https://codesandbox.io/docs)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
+2.Install dependencies:
+npm install
+
+
+3.Start the server:
+node index.js
+
+4.API Endpoints
+-Register
+-POST /register
+-Content-Type: application/json
+{
+  "username": "yourname",
+  "password": "yourpassword"
+}
+
+-Login
+POST /login
+Content-Type: application/json
+{
+  "username": "yourname",
+  "password": "yourpassword"
+}
+
+Protected Route
+GET /protected
+-Authorization: Bearer <your_token>
+
+-Project Structure
+├── index.js        # Main entry point
+├── hash.js         # Password hashing logic
+├── jwtauthen.js    # JWT authentication logic
+├── casescenario.js # Example/test cases
+├── package.json    # Project dependencies
+└── README.md       # Project documentation
